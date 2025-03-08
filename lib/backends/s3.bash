@@ -80,6 +80,8 @@ function restore() {
 
   # Check if prefere local is true and if tar file exists in tmp dir
   if [ "${BK_CACHE_SAVE_CACHE}" == "true" ] && [ -f "${BK_CACHE_LOCAL_PATH}/${TAR_FILE}" ]; then
+    echo "HI."
+    pwd
     echo -e "${BK_LOG_PREFIX}🗄️ Using previously downloaded file ${BK_CACHE_LOCAL_PATH}/${TAR_FILE} since local is preferred."
     if tar ${BK_TAR_EXTRACT_ARGS} "${BK_CACHE_LOCAL_PATH}/${TAR_FILE}" -C . ; then
         return
